@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "49e1d355-886b-4b02-a368-651356de5ccb",
+		"name": "DeloitteAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e553dbda-898a-4212-8ed1-c7c712dd0383",
+						"exec": [
+							"if(responseCode.code === 201){\r",
+							"    var data = JSON.parse(responseBody);\r",
+							"\r",
+							"    postman.setGlobalVariable(\"orderId\",data.orderId);\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "test1",
+						"value": "123",
+						"type": "text"
+					},
+					{
+						"key": "name",
+						"value": "babaaataa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"correlationId\": 1,\r\n    \"invoiceAmount\": 62.94,\r\n    \"orderTime\": \"2020-12-16 08:51:46\",\r\n    \"currency\": \"EUR\",\r\n    \"userDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"itemDetails\": [\r\n        {\r\n            \"itemId\":1,\r\n            \"articleId\": 220,\r\n            \"price\": 35.99,\r\n            \"quantity\": 1,\r\n            \"articleName\": \"Some Item\"\r\n        },\r\n        {\r\n            \"itemId\":2,\r\n            \"articleId\": 111,\r\n            \"price\": 5.99,\r\n            \"quantity\": 5,\r\n            \"articleName\": \"Some Item\"\r\n        }\r\n    ],\r\n    \"billingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n\t\t\"paymentStatus\": \"Pending\",\r\n\t\t\"paymentMethod\":\"card\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"shippingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "test1",
+						"value": "123",
+						"type": "text"
+					},
+					{
+						"key": "name",
+						"value": "babaaataa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"correlationId\": 1,\r\n    \"invoiceAmount\": 62.94,\r\n    \"orderTime\": \"2020-12-16 08:51:46\",\r\n    \"currency\": \"EUR\",\r\n    \"userDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"itemDetails\": [\r\n        {\r\n            \"itemId\":1,\r\n            \"articleId\": 220,\r\n            \"price\": 35.99,\r\n            \"quantity\": 1,\r\n            \"articleName\": \"Some Item\"\r\n        },\r\n        {\r\n            \"itemId\":2,\r\n            \"articleId\": 111,\r\n            \"price\": 5.99,\r\n            \"quantity\": 5,\r\n            \"articleName\": \"Some Item\"\r\n        }\r\n    ],\r\n    \"billingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n\t\t\"paymentStatus\": \"Pending\",\r\n\t\t\"paymentMethod\":\"card\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"shippingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders/89f34ecb-edd7-436d-8a36-0e6925a26853",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"89f34ecb-edd7-436d-8a36-0e6925a26853"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "test1",
+						"value": "123",
+						"type": "text"
+					},
+					{
+						"key": "name",
+						"value": "babaaataa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"correlationId\": 1,\r\n    \"invoiceAmount\": 162.94,\r\n    \"orderTime\": \"2020-12-16 08:51:46\",\r\n    \"currency\": \"EUR\",\r\n    \"userDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"itemDetails\": [\r\n        {\r\n            \"itemId\":1,\r\n            \"articleId\": 220,\r\n            \"price\": 35.99,\r\n            \"quantity\": 1,\r\n            \"articleName\": \"Some Item\"\r\n        },\r\n        {\r\n            \"itemId\":2,\r\n            \"articleId\": 111,\r\n            \"price\": 5.99,\r\n            \"quantity\": 5,\r\n            \"articleName\": \"Some Item\"\r\n        }\r\n    ],\r\n    \"billingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n\t\t\"paymentStatus\": \"Pending\",\r\n\t\t\"paymentMethod\":\"card\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"shippingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders/14e24fa2-e309-4f78-b9c8-a3064a4690d8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"14e24fa2-e309-4f78-b9c8-a3064a4690d8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "test1",
+						"value": "123",
+						"type": "text"
+					},
+					{
+						"key": "name",
+						"value": "babaaataa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"correlationId\": 1,\r\n    \"invoiceAmount\": 62.94,\r\n    \"orderTime\": \"2020-12-16 08:51:46\",\r\n    \"currency\": \"EUR\",\r\n    \"userDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"itemDetails\": [\r\n        {\r\n            \"itemId\":1,\r\n            \"articleId\": 220,\r\n            \"price\": 35.99,\r\n            \"quantity\": 1,\r\n            \"articleName\": \"Some Item\"\r\n        },\r\n        {\r\n            \"itemId\":2,\r\n            \"articleId\": 111,\r\n            \"price\": 5.99,\r\n            \"quantity\": 5,\r\n            \"articleName\": \"Some Item\"\r\n        }\r\n    ],\r\n    \"billingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n\t\t\"paymentStatus\": \"Pending\",\r\n\t\t\"paymentMethod\":\"card\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"shippingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders/2cf08a93-7224-40bf-b91a-877796aaa58e/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"2cf08a93-7224-40bf-b91a-877796aaa58e",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BillingDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "test1",
+						"value": "123",
+						"type": "text"
+					},
+					{
+						"key": "name",
+						"value": "babaaataa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"correlationId\": 1,\r\n    \"invoiceAmount\": 62.94,\r\n    \"orderTime\": \"2020-12-16 08:51:46\",\r\n    \"currency\": \"EUR\",\r\n    \"userDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"itemDetails\": [\r\n        {\r\n            \"itemId\":1,\r\n            \"articleId\": 220,\r\n            \"price\": 35.99,\r\n            \"quantity\": 1,\r\n            \"articleName\": \"Some Item\"\r\n        },\r\n        {\r\n            \"itemId\":2,\r\n            \"articleId\": 111,\r\n            \"price\": 5.99,\r\n            \"quantity\": 5,\r\n            \"articleName\": \"Some Item\"\r\n        }\r\n    ],\r\n    \"billingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n\t\t\"paymentStatus\": \"Pending\",\r\n\t\t\"paymentMethod\":\"card\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"shippingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders/ffe675a1-367d-44e4-bac7-e23fd166a169/billingDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"ffe675a1-367d-44e4-bac7-e23fd166a169",
+						"billingDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ShippingDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "test1",
+						"value": "123",
+						"type": "text"
+					},
+					{
+						"key": "name",
+						"value": "babaaataa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"correlationId\": 1,\r\n    \"invoiceAmount\": 62.94,\r\n    \"orderTime\": \"2020-12-16 08:51:46\",\r\n    \"currency\": \"EUR\",\r\n    \"userDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"itemDetails\": [\r\n        {\r\n            \"itemId\":1,\r\n            \"articleId\": 220,\r\n            \"price\": 35.99,\r\n            \"quantity\": 1,\r\n            \"articleName\": \"Some Item\"\r\n        },\r\n        {\r\n            \"itemId\":2,\r\n            \"articleId\": 111,\r\n            \"price\": 5.99,\r\n            \"quantity\": 5,\r\n            \"articleName\": \"Some Item\"\r\n        }\r\n    ],\r\n    \"billingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n\t\t\"paymentStatus\": \"Pending\",\r\n\t\t\"paymentMethod\":\"card\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"shippingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders/14e24fa2-e309-4f78-b9c8-a3064a4690d8/shippingDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"14e24fa2-e309-4f78-b9c8-a3064a4690d8",
+						"shippingDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Orders",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "test1",
+						"value": "123",
+						"type": "text"
+					},
+					{
+						"key": "name",
+						"value": "babaaataa",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"correlationId\": 1,\r\n    \"invoiceAmount\": 62.94,\r\n    \"orderTime\": \"2020-12-16 08:51:46\",\r\n    \"currency\": \"EUR\",\r\n    \"userDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"itemDetails\": [\r\n        {\r\n            \"itemId\":1,\r\n            \"articleId\": 220,\r\n            \"price\": 35.99,\r\n            \"quantity\": 1,\r\n            \"articleName\": \"Some Item\"\r\n        },\r\n        {\r\n            \"itemId\":2,\r\n            \"articleId\": 111,\r\n            \"price\": 5.99,\r\n            \"quantity\": 5,\r\n            \"articleName\": \"Some Item\"\r\n        }\r\n    ],\r\n    \"billingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n\t\t\"paymentStatus\": \"Pending\",\r\n\t\t\"paymentMethod\":\"card\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    },\r\n    \"shippingDetails\": {\r\n        \"id\": 1,\r\n        \"salutation\": \"mr\",\r\n        \"firstName\": \"Pratyush\",\r\n        \"lastName\": \"Mohapatra\",\r\n        \"street\": \"111 XYZ\",\r\n        \"zipCode\": \"751006\",\r\n        \"city\": \"Amsterdam\",\r\n        \"mobile\":\"+31121212121\",\r\n        \"email\":\"abc@gmail.com\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/orders/4d4077c1-9437-497f-8836-985be95ef24d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"orders",
+						"4d4077c1-9437-497f-8836-985be95ef24d"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
